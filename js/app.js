@@ -26,6 +26,5 @@ function Store() {
 }
 
 newTodoEvent = function( data ) {
-    debugger;
     $( '.todos' ).append( data );
 };
