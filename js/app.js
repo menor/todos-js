@@ -1,21 +1,21 @@
 var Todos = {};
 
 $( document ).ready( function() {
-    Todos.todoTemplate = document.getElementById('#todo_template').children();
-    Todos.view = new Todos.View();
-    Todos.todos = new Todos.Store();
-    Todos.controller = new Todos.Controller();
-    Todos.view.controller = Todos.controller;
-    
+    Todos.todoTemplate = document.getElementById('todo_template').children();
+    Todos.bindEvents();
+});
+
+Todos.bindEvents = function() {
     $( 'form' ).on( 'submit', function() {
         event.preventDefault();
         newTodoEvent( this.todo.value );
     });
-});
+};
 
 
 // Controller
 function Todo() {
+
 }
 
 // View
@@ -27,4 +27,4 @@ function Store() {
 
 newTodoEvent = function( data ) {
     $( '.todos' ).append( data );
-}
+};
