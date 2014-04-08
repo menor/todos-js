@@ -1,7 +1,7 @@
 var Todos = {};
 
 $( document ).ready( function() {
-    Todos.todoTemplate = document.getElementById('todo_template').children();
+    Todos.todoTemplate = document.getElementById('todo_template').children;
     Todos.bindEvents();
 });
 
@@ -26,5 +26,6 @@ function Store() {
 }
 
 newTodoEvent = function( data ) {
+    debugger;
     $( '.todos' ).append( data );
 };
