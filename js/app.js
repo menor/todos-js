@@ -8,23 +8,34 @@ $( document ).ready( function() {
 Todos.bindEvents = function() {
     $( 'form' ).on( 'submit', function() {
         event.preventDefault();
-        newTodoEvent( this.todo.value );
+        Todos.createTodo( this.todo.value );
     });
 };
 
 
-// Controller
-function Todo() {
 
-}
+// Controller
+Todos.createTodo = function(data) {
+    // Add Todo to the store
+    
+    // Append todo to the view
+};
 
 // View
 
 // Model
-function Store() {
+Todos.store = function() {
     this.store = {};
-}
+};
+
+Todos.Todo = function( data ) {
+    this.id = Todos.store.store.length ;
+
+};
 
 newTodoEvent = function( data ) {
+    // Add Todo to the store
+    // Append todo to the view
+    var template = Todos.todoTemplate;
     $( '.todos' ).append( data );
 };
